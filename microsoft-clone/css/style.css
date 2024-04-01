@@ -1,0 +1,15 @@
+.logo {
+    padding: 16px;
+    height: 100%;
+    margin-top: 1px;
+    width: 137px;
+    outline-offset: -2px;
+}
+
+.collapse li a:hover {
+    text-decoration: underline blue 2px;
+    color:#262626;
+}
+.floata{display: flex;justify-content:last center;}
+
+.backgroundslider{background-image: url(/img/back.webp);height: 500px;background-position: center; background-size: cover;}
