@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sık Sorulan Sorular</title>
+  <style type="text/css">
+    body {
+      background: #f5f7fa;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .sss-container {
+      max-width: 1180px;
+      width: 80%;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px 0 rgba(37,99,235,0.08);
+      padding: 32px 40px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 1200px) {
+      .sss-container {
+        max-width: 80vw;
+        padding: 16px 2vw;
+      }
+    }
+    @media (max-width: 600px) {
+      .sss-container {
+        padding: 12px 2vw;
+        margin: 16px 0;
+      }
+      .sss-title {
+        font-size: 1.3rem;
+      }
+      .faq-question {
+        font-size: 1rem;
+        padding: 14px 10px;
+      }
+    }
+    .sss-title {
+      text-align: center;
+      color: #2563eb;
+      font-size: 2rem;
+      margin-bottom: 32px;
+      letter-spacing: 1px;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .faq-item {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px 0 rgba(37,99,235,0.06);
+      background: #f8fafc;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item.open {
+      box-shadow: 0 4px 16px 0 rgba(37,99,235,0.13);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      color: #2563eb;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .faq-question:hover {
+      background: #e0e7ef;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background: #fff;
+      color: #22223b;
+      font-size: 1rem;
+      padding: 0 20px;
+      transition: max-height 0.3s cubic-bezier(.4,0,.2,1), padding 0.2s;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      padding: 16px 20px 20px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sss-container">
+    <h1 class="sss-title">Sık Sorulan Sorular</h1>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">Siparişimi nasıl takip edebilirim?</button>
+        <div class="faq-answer">
+          <p>Hesabım &gt; Siparişlerim bölümünden veya kargo takip linkiyle siparişinizi kolayca takip edebilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">Kargo ücreti ne kadar?</button>
+        <div class="faq-answer">
+          <p>Tüm ürünlerde ücretsiz kargo fırsatımızdan yararlanabilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">İade ve değişim nasıl yapılır?</button>
+        <div class="faq-answer">
+          <p>Ürünü teslim aldıktan sonra 14 gün içinde iade veya değişim talebinde bulunabilirsiniz. Detaylar için <a href="#">iade politikamıza</a> göz atın.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">Ürünleriniz garantili mi?</button>
+        <div class="faq-answer">
+          <p>Evet, tüm ürünlerimiz 2 yıl Mingitav garantisi altındadır.</p>
+        </div>
+      </div>
+
+      <!-- Yeni soru-cevap eklemek için yukarıdaki yapıyı kopyalayabilirsin -->
+
+    </div>
+  </div>
+
+  <script>
+    // Akordeon aç/kapa
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const item = this.parentElement;
+        item.classList.toggle('open');
+
+        // Eğer yalnızca bir açık kalsın istiyorsan, aşağıdaki kodun yorum satırını kaldır:
+        // document.querySelectorAll('.faq-item').forEach(i => {
+        //   if (i !== item) i.classList.remove('open');
+        // });
+      });
+    });
+  </script>
+
+</body>
+</html>
